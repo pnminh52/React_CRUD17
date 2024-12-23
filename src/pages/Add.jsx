@@ -5,15 +5,15 @@ const Add = (props) => {
   return (
     <div>
       <form action="" onSubmit={onAdd}>
-        <input type="text" placeholder="name" onInput={onChange} name="name" />
-        <input type="text" placeholder="des" onInput={onChange} name="des" />
-        <input type="text" placeholder="img" onInput={onChange} name="img" />
+        <input type="text" name="name" placeholder="name" onInput={onChange} />
+        <input type="text" name="des" placeholder="des" onInput={onChange} />
         <input
-          type="text"
+          type="number"
+          name="price"
           placeholder="price"
           onInput={onChange}
-          name="price"
         />
+        <input type="text" name="img" placeholder="img" onInput={onChange} />
         <button>Submit</button>
       </form>
     </div>

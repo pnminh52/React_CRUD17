@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import List from "./pages/List";
 import Add from "./pages/Add";
+import List from "./pages/List";
 import Update from "./pages/Update";
 import { useNavigate, Routes, Route } from "react-router-dom";
 const App = () => {
@@ -13,7 +13,7 @@ const App = () => {
       .then((data) => setProducts(data));
   }, []);
   const onDel = (id) => {
-    if (confirm("xoa") == true) {
+    if (confirm("Xoa") == true) {
       fetch(`http://localhost:3000/products/${id}`, {
         method: "DELETE",
       });
@@ -47,7 +47,7 @@ const App = () => {
         setProducts(
           products.map((item) => (item.id === data.id ? data : item))
         );
-        alert("Done");
+        alert("done");
       })
       .then(() => navigate("/products/list"));
   };
@@ -55,15 +55,15 @@ const App = () => {
     <>
       <Routes>
         <Route
-          path="/products/list"
+          path="products/list"
           element={<List products={products} onDel={onDel} />}
         />
         <Route
-          path="/products/add"
+          path="products/add"
           element={<Add onChange={onChange} onAdd={onAdd} />}
         />
         <Route
-          path="/products/:id/update"
+          path="products/:id/update"
           element={<Update products={products} onUpdate={onUpdate} />}
         />
       </Routes>
